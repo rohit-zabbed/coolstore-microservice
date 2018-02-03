@@ -8,7 +8,7 @@
   <packaging>kjar</packaging>
   <name>coolstore</name>
   <properties>
-    <version.org.kie>6.4.0.Final-redhat-3</version.org.kie>
+    <version.org.kie>7.5.0.Final</version.org.kie>
   </properties>
   <dependencies>
     <dependency>
