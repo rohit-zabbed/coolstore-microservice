@@ -5,46 +5,39 @@ package com.redhat.coolstore;
  */
 @org.kie.api.definition.type.Label("PromoEvent")
 @org.kie.api.definition.type.Role(org.kie.api.definition.type.Role.Type.EVENT)
-public class PromoEvent implements java.io.Serializable
-{
+public class PromoEvent implements java.io.Serializable {
 
-   static final long serialVersionUID = 1L;
+  static final long serialVersionUID = 1L;
 
-   @org.kie.api.definition.type.Label("ItemId")
-   @org.kie.api.definition.type.Position(0)
-   private java.lang.String itemId;
+  @org.kie.api.definition.type.Label("ItemId")
+  @org.kie.api.definition.type.Position(0)
+  private java.lang.String itemId;
 
-   @org.kie.api.definition.type.Label("percentOff")
-   @org.kie.api.definition.type.Position(1)
-   private double percentOff;
+  @org.kie.api.definition.type.Label("percentOff")
+  @org.kie.api.definition.type.Position(1)
+  private double percentOff;
 
-   public PromoEvent()
-   {
-   }
+  public PromoEvent() {
+  }
 
-   public java.lang.String getItemId()
-   {
-      return this.itemId;
-   }
+  public PromoEvent(java.lang.String itemId, double percentOff) {
+    this.itemId = itemId;
+    this.percentOff = percentOff;
+  }
 
-   public void setItemId(java.lang.String itemId)
-   {
-      this.itemId = itemId;
-   }
+  public java.lang.String getItemId() {
+    return this.itemId;
+  }
 
-   public double getPercentOff()
-   {
-      return this.percentOff;
-   }
+  public void setItemId(java.lang.String itemId) {
+    this.itemId = itemId;
+  }
 
-   public void setPercentOff(double percentOff)
-   {
-      this.percentOff = percentOff;
-   }
+  public double getPercentOff() {
+    return this.percentOff;
+  }
 
-   public PromoEvent(java.lang.String itemId, double percentOff)
-   {
-      this.itemId = itemId;
-      this.percentOff = percentOff;
-   }
+  public void setPercentOff(double percentOff) {
+    this.percentOff = percentOff;
+  }
 }

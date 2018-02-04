@@ -1,0 +1,10 @@
+server:
+  address: localhost
+  port: 8822
+
+spring:
+  application.name: cart-service
+  jersey.application-path: /api
+  profiles.active: drools
+
+management.security.enabled: false
