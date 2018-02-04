@@ -1,0 +1,35 @@
+version: '3.1'
+
+services:
+  drools-wb:
+    image: jboss/drools-workbench-showcase
+    container_name: drools-wb
+    ports:
+      - "8080:8080"
+      - "8001:8001"
+#    volumes:
+#      - .git:/opt/jboss/wildfly/bin/.niogit:rw
+    environment:
+      - KIE_DEMO false
+    networks:
+      - core-infra
+
+  kie-server:
+    image: jboss/kie-server-showcase
+    container_name: kie-server
+    ports:
+      - "8180:8080"
+    links:
+      - drools-wb
+#    environment:
+      # KIE Workbench environment variables
+      # Neccessary to connect the KIE server to the KIE workbench
+#      - KIE_WB_PORT_8080_TCP=tcp://kie_wb:8080
+#      - KIE_WB_ENV_KIE_CONTEXT_PATH=drools-wb
+#      - KIE_WB_PORT_8080_TCP_ADDR=kie_wb
+    networks:
+      - core-infra
+
+networks:
+  core-infra:
+#    external: true

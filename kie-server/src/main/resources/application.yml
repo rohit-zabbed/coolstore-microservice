@@ -1,0 +1,14 @@
+#server configuration
+server:
+  address: localhost
+  port: 8181
+
+jbpm.executor.enabled: false
+
+kieserver:
+  serverId: payment-server
+  restContextPath: /kie-server/services/rest
+  location: http://${server.address}:${server.port}${kieserver.restContextPath}/server
+  controller: tcp://localhost:8080/drools-wb/services/rest/controller
+  drools.enabled: true
+  dmn.enabled: true
